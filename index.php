@@ -25,11 +25,6 @@
                                 </p>
                                 <p class="text-center text-white"> UI/UX DESIGNER AND WEB DEVELOPER
                                 </p>
-
-                                <!-- <a href="">
-                                    <button class="button-custom text-white">Download Resume
-                                    </button>
-                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -51,8 +46,11 @@
                                     <p>Designed By</p>
                                     <p>Websteers</p>
                                     <a href="./contact-us-websteers.php">
-                                        <button class="button-custom text-white">Contact Us
+                                        <button class="button-custom first">Contact Us
                                         </button>
+                                    </a>
+                                    <a href="./services-websteers.php">
+                                        <button class="button-custom text-white">Explore More</button>
                                     </a>
                                 </div>
                             </div>
@@ -76,8 +74,11 @@
                                     <p>Website?</p>
                                     <p>Websteers<span>.in</span> is here.</p>
                                     <a href="./contact-us-websteers.php">
-                                        <button class="button-custom text-white">Contact Us
+                                        <button class="button-custom first">Contact Us
                                         </button>
+                                    </a>
+                                    <a href="./services-websteers.php">
+                                        <button class="button-custom text-white">Explore More</button>
                                     </a>
                                 </div>
                             </div>
@@ -568,7 +569,6 @@ if (width <= 768) {
     //for slide-third
     $(":root").css('--carousel_slide_third_height', '300px')
     $(".carousel-slide-third .col-sm-8").css('border-right', '0px')
-    $(".carousel-slide-third .button-custom").css('padding', '10px 25px')
     $(".slide-third-text-box p:nth-child(2)").css("display", "none")
     $(".slide-third-text-box p:nth-child(1)").html(function(index, current_content) {
         return current_content + " Website?"
@@ -578,7 +578,6 @@ if (width <= 768) {
     //for slide-second
     $(":root").css('--carousel_slide_second_height', '300px')
     $(".carousel-slide-second .col-sm-4").css('background-color', '#e3e3e3')
-    $(".carousel-slide-second .button-custom").css('padding', '10px 25px')
     $(".slide-second-text-box p:nth-child(3)").css("display", "none")
     $(".slide-second-text-box p:nth-child(2)").html(function(index, current_content) {
         return current_content + " Websteers"
@@ -591,7 +590,6 @@ $(window).resize(function() {
         //for slide-third
         $(":root").css('--carousel_slide_third_height', '300px')
         $(".carousel-slide-third .col-sm-8").css('border-right', '0px')
-        $(".carousel-slide-third .button-custom").css('padding', '10px 25px')
         $(".slide-third-text-box p:nth-child(2)").css("display", "none")
         $(".slide-third-text-box p:nth-child(1)").html("Dreaming of Having Website?")
         $(".slide-third-text-box p:nth-child(1)").css("margin-bottom", "0px")
@@ -599,7 +597,6 @@ $(window).resize(function() {
         //for slide-second
         $(":root").css('--carousel_slide_second_height', '300px')
         $(".carousel-slide-second .col-sm-4").css('background-color', '#e3e3e3')
-        $(".carousel-slide-second .button-custom").css('padding', '10px 25px')
         $(".slide-second-text-box p:nth-child(3)").css("display", "none")
         $(".slide-second-text-box p:nth-child(2)").html('Designed By Websteers')
         $(".slide-second-text-box p:nth-child(2)").css('margin-bottom', '30px')
@@ -607,7 +604,6 @@ $(window).resize(function() {
         //for slide-third to original state
         $(".carousel-slide-third .col-sm-8").css('border-right', '150px solid transparent')
         $(":root").css('--carousel_slide_third_height', '600px')
-        $(".carousel-slide-third .button-custom").css('padding', '15px 35px')
         $(".slide-third-text-box p:nth-child(2)").css("display", "block")
         $(".slide-third-text-box p:nth-child(1)").html("Dreaming of Having")
         $(".slide-third-text-box p:nth-child(1)").css("margin-bottom", "-15px")
@@ -615,7 +611,6 @@ $(window).resize(function() {
         //for slide-second to original state
         $(":root").css('--carousel_slide_second_height', '600px')
         $(".carousel-slide-second .col-sm-4").css('background-color', '#0000000f')
-        $(".carousel-slide-second .button-custom").css('padding', '15px 35px')
         $(".slide-second-text-box p:nth-child(3)").css("display", "block")
         $(".slide-second-text-box p:nth-child(2)").html('Designed By')
         $(".slide-second-text-box p:nth-child(2)").css('margin-bottom', '0px')

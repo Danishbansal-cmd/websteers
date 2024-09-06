@@ -141,7 +141,7 @@ textarea.input-field-small {
 
 .get-in-touch {
     padding: 230px 0px;
-    background-image: url('images/contact_us_background.jpg');
+    background-image: url('../images/contact_us_background.jpg');
     background-position: center center;
     background-size: cover;
     position: relative;

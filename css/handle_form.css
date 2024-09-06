@@ -1,0 +1,84 @@
+.thank-you-image {
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/thank-you.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.thank-you>.container>.row>.col-sm-5 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.thank-you-text p:first-child {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0px;
+    margin-bottom: -10px;
+}
+
+.thank-you-text p,
+.thank-you-next p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.thank-you-next {
+    margin-top: 40px;
+}
+
+.thank-you-next p {
+    margin-bottom: 12px;
+}
+
+.thank-you-next a {
+    text-decoration: none;
+}
+
+.button-custom.first {
+    padding: 6px 12px;
+    background-color: white;
+    color: black;
+    border: 2px solid var(--global_color_main_first);
+    box-sizing: border-box;
+}
+
+.button-custom {
+    padding: 8px 12px;
+}
+
+@media only screen and (max-width: 992px) {
+    .thank-you>.container {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .thank-you-text p:first-child {
+        font-size: 2rem;
+    }
+
+    .thank-you-text p,
+    .thank-you-next p,
+    .button-custom {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+
+    .thank-you>.container>.row>.col-sm-5,
+    .thank-you>.container>.row>.col-sm-7 {
+        width: 100%;
+    }
+
+    .thank-you>.container>.row>.col-sm-5 {
+        margin: 30px 0px 0px 0px;
+    }
+
+    .thank-you-next {
+        margin-top: 20px;
+    }
+}

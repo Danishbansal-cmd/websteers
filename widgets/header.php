@@ -37,6 +37,9 @@
 
     <!-- Style for the Contact Form -->
     <link rel="stylesheet" href="css/contact_form.css">
+        
+    <!-- Script for Handling Form css-->
+    <link href="css/handle_form.css" rel="stylesheet"></script>
 
     <!-- Script for Contact Form -->
     <script src="js/contact_form_script.js"></script>
