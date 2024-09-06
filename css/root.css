@@ -1,0 +1,8 @@
+:root {
+    --global_color_black_shade: #2b2b2b;
+    --global_color_heading: #4b4b4b;
+    --global_color_main_first: #aa00e2;
+    --carousel_height: 600px;
+    --carousel_slide_second_height: 600px;
+    --carousel_slide_third_height: 600px;
+}
