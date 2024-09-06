@@ -29,6 +29,9 @@
     <!-- for about_us.css -->
     <link href="css/about_us.css" rel="stylesheet">
     
+    <!-- for Privacy_policy and Terms_and_condition css -->
+    <link href="css/policy_and_condition.css" rel="stylesheet">
+    
     <!-- for footer.css -->
     <link href="css/footer.css" rel="stylesheet">
 

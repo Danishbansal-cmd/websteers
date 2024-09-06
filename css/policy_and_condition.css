@@ -1,0 +1,50 @@
+.privacy-policy-top,
+.terms-condition-top {
+    background-color: var(--global_color_main_first_shade);
+    border-bottom: 2px solid var(--global_color_main_first);
+}
+
+.privacy-policy-top>.container,
+.terms-condition-top>.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.privacy-policy-top-text p:first-child,
+.terms-condition-top-text p:first-child {
+    font-weight: 800;
+    font-size: 2.4rem;
+    margin-bottom: 0px;
+}
+
+.privacy-policy-top-text p:last-child,
+.terms-condition-top-text p:last-child {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #6e6e6e;
+    margin-bottom: 0px;
+}
+
+.privacy-policy-main,
+.terms-condition-main {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.privacy-policy-main>.container h2,
+.privacy-policy-main>.container h3,
+.privacy-policy-main>.container h4,
+.terms-condition-main>.container h2,
+.terms-condition-main>.container h3,
+.terms-condition-main>.container h4 {
+    font-weight: 800;
+    margin: 20px 0px;
+}
+
+.privacy-policy-main>.container h3, .terms-condition-main>.container h3 {
+    font-weight: 700;
+}
+
+.privacy-policy-main>.container h4, .terms-condition-main>.container h4 {
+    font-weight: 600;
+}

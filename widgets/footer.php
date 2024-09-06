@@ -91,7 +91,7 @@
             <div class="col-sm-4">
                 <ul>
                     <li><a href="./privacy-policy-websteers.php">privacy policy</a></li>
-                    <li><a href="./terms-conditions-websteers.php">terms and conditions</a></li>
+                    <li><a href="./terms-and-conditions-websteers.php">terms and conditions</a></li>
                 </ul>
             </div>
         </div>
