@@ -4,6 +4,28 @@
     --global_color_main_first: #aa00e2;
     --global_color_main_first_shade: #f7deff;
     --carousel_height: 600px;
+    --carousel_slide_first_height: 600px;
     --carousel_slide_second_height: 600px;
     --carousel_slide_third_height: 600px;
+    --footer-height: 600px;
+    --responsive-footer-height: 850px;
+    --responsive-footer-height-second: 1250px;
+    --header-height: 70px;
+}
+
+.button-custom {
+    background-color: var(--global_color_main_first);
+    border-radius: 4px;
+    padding: 15px 35px;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.button-custom.first {
+    padding: 6px 12px !important;
+    background-color: transparent;
+    color: black;
+    border: 2px solid var(--global_color_main_first);
+    box-sizing: border-box;
 }

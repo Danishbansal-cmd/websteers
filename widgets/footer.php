@@ -61,7 +61,7 @@
                                 <div class="column-heading-logo"></div>
                             </div>
                             <p><span>Ph:</span> +1 437-973-7783 (Dir)</p>
-                            <p><span>Off:</span> +91 9855-533-222</p>
+                            <p><span>Off:</span> +91 8968-444-720</p>
                             <p><span>Mail:</span> danishbansal60@gmail.com</p>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
     <div class="container footer-copyright">
         <div class="row">
             <div class="col-sm-8">
-                <p class="copyright-text">© <span></span> Websteers. Digital Agency (Punjab, India). All Rights Reserved
+                <p class="copyright-text">© <span></span> Websteers. Digital Agency (Brampton, Canada). All Rights Reserved
                 </p>
             </div>
             <div class="col-sm-4">

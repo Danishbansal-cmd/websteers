@@ -98,18 +98,17 @@
                             <h4>Our Address</h4>
                         </div>
                         <div class="form-main-content-address">
-                            <p class="address-text">Ph: +91 8968-444-720 (Dir)</p>
-                            <p class="address-text">Off: +91 9855-533-222</p>
-                            <p class="address-text">Fax: +91 9417-385-055</p>
-                            <p class="address-text">Mail: danishbansal60@gmail.com</p>
+                            <p class="address-text"><strong>Ph: </strong>+1 437-973-7783 (Dir)</p>
+                            <p class="address-text"><strong>Off: </strong>+91 8968-444-720</p>
+                            <p class="address-text"><strong>Mail: </strong>danishbansal60@gmail.com</p>
                         </div>
                         <div class="form-main-content-heading pb-4 pt-5">
                             <h4>Bathinda Location</h4>
                         </div>
                         <div class="form-main-content-address">
-                            <p class="address-text">#32806, Street No. 4, Paras Ram Nagar</p>
+                            <p class="address-text">5 Nathaniel Crescent, Brampton, L6Y 5M2</p>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215.49375697300422!2d74.92083301355173!3d30.211398267681577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39173297173abbcd%3A0xa00033c0a58a5ac8!2sBathinda%2C%20Punjab!5e0!3m2!1sen!2sin!4v1722496176786!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2778976678123!2d-79.75514942430097!3d43.64238625313093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b154e37c6c071%3A0x44263d990a879224!2s5%20Nathaniel%20Crescent%2C%20Brampton%2C%20ON%20L6Y%205M2%2C%20Canada!5e0!3m2!1sen!2sin!4v1725685163136!5m2!1sen!2sin"
                                 width="100%" height="150px" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>

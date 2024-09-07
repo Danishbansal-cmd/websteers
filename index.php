@@ -4,7 +4,7 @@
 
 <main class="main-content-box">
     <section class="carousel-master">
-        <div id="carouselExampleCaptions" class="carousel slide">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <!-- data-bs-ride="carousel" -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -13,17 +13,61 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
+                <!-- First slide content -->
+                <div class="carousel-item first active" data-bs-interval="3000">
+                    <div class="carousel-box carousel-slide-first w-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="slide-first-text">
+                                        <p>We are Marketing</p>
+                                        <p>and Digital Agency</p>
+                                        <p>
+                                            Websteers is a dynamic marketing and digital agency dedicated to empowering
+                                            businesses with innovative online solutions. We specialize in SEO, web
+                                            design, development, content creation, and digital marketing strategies that
+                                            drive growth and enhance brand visibility.
+                                        </p>
+                                        <a href="./contact-us-websteers.php">
+                                            <button class="button-custom first">Get Started
+                                            </button>
+                                        </a>
+                                        <a href="./services-websteers.php">
+                                            <button class="button-custom text-white">Explore More</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="slide-first-image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide-first-overlay"></div>
+                </div>
+
+                <!-- Middle Slide content for Team and websteers -->
                 <div class="carousel-item" data-bs-interval="3000">
                     <div class="image-box-inner-div d-block w-100">
                         <div class="image-box-inner-div-cover">
                             <div class="container inner-div-cover-content-box">
-                                <p class="inner-div-cover-content-box-text">hi<span>,</span>
-                                    i<br>am
-                                    danish<br>star <span>.</span>
+                                <p class="inner-div-cover-content-box-text">
+                                    hi
+                                    <span>,</span>
+                                    we
+                                    <br>
+                                    are
+                                    websteers<br>team <span>.</span>
                                 </p>
-                                <p class="text-center text-white"> UI/UX DESIGNER AND WEB DEVELOPER
+                                <p class="image-box-aim text-center text-white">
+                                    <strong>Aim </strong>
+                                    To empower businesses by providing cutting-edge digital
+                                    solutions that enhance online presence, drive targeted traffic, and boost
+                                    conversions.
                                 </p>
                             </div>
                         </div>
@@ -59,7 +103,7 @@
                 </div>
 
                 <!--third carousel image or slide-->
-                <div class="carousel-item active" data-bs-interval="3000">
+                <div class="carousel-item" data-bs-interval="3000">
                     <div class="carousel-box carousel-slide-third w-100">
                         <div class="row">
                             <div class="col-sm-8">
@@ -89,6 +133,7 @@
             </div>
         </div>
 
+        <!-- Previous and Next Button elements -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -547,12 +592,12 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-main-content-heading pb-4">
-                            <h4>Bathinda Location</h4>
+                            <h4>Brampton Location</h4>
                         </div>
                         <div class="form-main-content-address">
-                            <p class="address-text">#32806, Street No. 4, Paras Ram Nagar</p>
+                            <p class="address-text">5 Nathaniel Crescent, Brampton, L6Y 5M2</p>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215.49375697300422!2d74.92083301355173!3d30.211398267681577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39173297173abbcd%3A0xa00033c0a58a5ac8!2sBathinda%2C%20Punjab!5e0!3m2!1sen!2sin!4v1722496176786!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2778976678123!2d-79.75514942430097!3d43.64238625313093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b154e37c6c071%3A0x44263d990a879224!2s5%20Nathaniel%20Crescent%2C%20Brampton%2C%20ON%20L6Y%205M2%2C%20Canada!5e0!3m2!1sen!2sin!4v1725685163136!5m2!1sen!2sin"
                                 width="100%" height="150px" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -583,6 +628,9 @@ if (width <= 768) {
         return current_content + " Websteers"
     })
     $(".slide-second-text-box p:nth-child(2)").css('margin-bottom', '30px')
+
+    //for first-second
+    $(":root").css('--carousel_slide_first_height', '300px')
 }
 $(window).resize(function() {
     width = $(window).width();
@@ -600,6 +648,9 @@ $(window).resize(function() {
         $(".slide-second-text-box p:nth-child(3)").css("display", "none")
         $(".slide-second-text-box p:nth-child(2)").html('Designed By Websteers')
         $(".slide-second-text-box p:nth-child(2)").css('margin-bottom', '30px')
+
+        //for first-second
+        $(":root").css('--carousel_slide_first_height', '300px')
     } else {
         //for slide-third to original state
         $(".carousel-slide-third .col-sm-8").css('border-right', '150px solid transparent')
@@ -614,9 +665,14 @@ $(window).resize(function() {
         $(".slide-second-text-box p:nth-child(3)").css("display", "block")
         $(".slide-second-text-box p:nth-child(2)").html('Designed By')
         $(".slide-second-text-box p:nth-child(2)").css('margin-bottom', '0px')
+
+
+        //for first-second to original state
+        $(":root").css('--carousel_slide_first_height', '600px')
     }
 });
 
+// for newsletter button on_click functions
 $("#newsletter_subscribe_button").click(function() {
     console.log("it works")
     let newsletter_email = $('#newsletter_emailaddress').val();
