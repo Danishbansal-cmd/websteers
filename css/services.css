@@ -2,7 +2,7 @@
     height: 600px;
     display: flex;
     align-items: center;
-    background-image: url(images/services/services_1.avif);
+    background-image: url(../images/services/services_1.avif);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -65,7 +65,7 @@
 
 .design-development-image {
     width: 90%;
-    background-image: url(images/services/design_and_development.png);
+    background-image: url(../images/services/design_and_development.png);
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
@@ -107,7 +107,7 @@
     top: 5px;
     margin-right: 10px;
     display: inline-block;
-    background-image: url(icons/tick.png);
+    background-image: url(../icons/tick.png);
     background-size: 100% 100%;
     width: 20px;
     height: 20px;
@@ -185,7 +185,7 @@
 }
 
 .what-is-seo-image {
-    background-image: url(images/services/seo_1.jpg);
+    background-image: url(../images/services/seo_1.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
@@ -308,7 +308,7 @@
 }
 
 .graphics-image {
-    background-image: url(images/graphics_main_1.png);
+    background-image: url(../images/graphics_main_1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -422,7 +422,7 @@
 }
 
 .manage-site-image-box {
-    background-image: url(images/managing_site_2.jpg);
+    background-image: url(../images/managing_site_2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -527,7 +527,7 @@
 }
 
 .ads-marketing-image {
-    background-image: url(images/ads_marketing_woman.png);
+    background-image: url(../images/ads_marketing_woman.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -535,7 +535,7 @@
 }
 
 .call-now-image {
-    background-image: url(images/call_now.png);
+    background-image: url(../images/call_now.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -548,7 +548,7 @@
 }
 
 .shape-image {
-    background-image: url(images/shape.png);
+    background-image: url(../images/shape.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

@@ -32,6 +32,9 @@
     <!-- for Privacy_policy and Terms_and_condition css -->
     <link href="css/policy_and_condition.css" rel="stylesheet">
     
+    <!-- for Services Page css -->
+    <link href="css/services.css" rel="stylesheet">
+    
     <!-- for footer.css -->
     <link href="css/footer.css" rel="stylesheet">
 

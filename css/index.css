@@ -47,7 +47,7 @@
 
 .carousel-slide-first-overlay {
     position: absolute;
-    top: 0px;
+    top: -5px;
     right: 0px;
     width: 550px;
     height: 400px;
