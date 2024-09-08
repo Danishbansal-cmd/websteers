@@ -73,7 +73,7 @@
                                     <div>
                                         <label class="inputfield-label">Any Note</label>
                                     </div>
-                                    <textarea name="note" placeholder="Your Note" class="input-field-small" rows="20"
+                                    <textarea name="any_note" placeholder="Your Note" class="input-field-small" rows="20"
                                         cols="100"></textarea>
                                 </div>
                             </div>

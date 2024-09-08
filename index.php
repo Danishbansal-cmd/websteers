@@ -1,5 +1,5 @@
 <?php
-    include('widgets/header.php');
+include('widgets/header.php');
 ?>
 
 <main class="main-content-box">
@@ -449,15 +449,19 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="newsletter-main">
-                        <h2>Subscribe Our Newsletter</h2>
-                        <div class="newsletter-input">
-                            <input type="email" name="useremail" id="newsletter_emailaddress" class="input-field-small"
-                                placeholder="Enter Your Email">
-                            <button class="button-custom text-white" id="newsletter_subscribe_button">Subscribe</button>
-                            <div class="newsletter-email-error text-white"></div>
+                    <form id="newsletter_form">
+                        <div class="newsletter-main">
+                            <h2>Subscribe Our Newsletter</h2>
+                            <div class="newsletter-input">
+                                <input type="email" id="newsletter_emailaddress" class="input-field-small"
+                                    placeholder="Enter Your Email">
+                                <!--  name="useremail" -->
+                                <button type="submit" class="button-custom text-white"
+                                    id="newsletter_subscribe_button">Subscribe</button>
+                                <div class="newsletter-email-error text-white"></div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -515,7 +519,8 @@
             <div class="container contact-form-main-content">
                 <div class="row">
                     <div class="col-sm-6">
-                        <form action="form-handle.php" method="post" onsubmit="return false">
+                        <form action="form-handle.php" method="post">
+                            <!--  onsubmit="return false" -->
                             <div class="form-main-content-heading">
                                 <h4>Contact Us</h4>
                             </div>
@@ -570,7 +575,7 @@
                                     <div>
                                         <label class="inputfield-label">Any Note</label>
                                     </div>
-                                    <textarea name="any-note" placeholder="Your Note" class="input-field-small"
+                                    <textarea name="any_note" placeholder="Your Note" class="input-field-small"
                                         rows="20" cols="100"></textarea>
                                 </div>
                             </div>
@@ -672,29 +677,86 @@ $(window).resize(function() {
     }
 });
 
+// for handling the newsletter subscribe emails
+// Handle form submission using AJAX
+async function submit_email(method, formData) {
+    try {
+        const response = await fetch('./newsletter-emails.php', {
+            'method': method,
+            'headers': {
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify(formData) // Send email data
+        });
+
+        const data = await response;
+
+        // Check if the response is OK (status 200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        } else {
+            console.log("Network response is ok")
+        }
+
+        // Check the response status
+        if (data.status === 200) {
+            console.log("Successful: Request generated")
+        } else {
+            console.log("UnSuccessful: Request not generated")
+        }
+
+        alert(data.message);
+
+    } catch (error) {
+        // Check the error type using the 'name' property
+        switch (error.name) {
+            case 'SyntaxError':
+                alert(error);
+                console.error('Caught an unknown error:', error.message);
+                break;
+            default:
+                alert(error);
+                console.error('Caught an unknown error:', error.message);
+                break;
+        }
+    }
+}
+
 // for newsletter button on_click functions
-$("#newsletter_subscribe_button").click(function() {
-    console.log("it works")
+$("#newsletter_form").submit(async function(event) {
+    let everythingAlright = true;
+
     let newsletter_email = $('#newsletter_emailaddress').val();
     let validRegexForEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (newsletter_email == "") {
+        everythingAlright = false;
         $('.newsletter-email-error').css({
             "bottom": "-27px"
         });
         $('.newsletter-email-error').html("Empty Email!!!");
     } else if (!(validRegexForEmail.test(newsletter_email))) {
+        everythingAlright = false;
         $('.newsletter-email-error').css({
             "bottom": "-27px"
         });
         $('.newsletter-email-error').html("Format Wrong Email!!!")
     } else {
+        everythingAlright = true;
         $('.newsletter-email-error').css({
             "bottom": "0px"
         });
+    }
+
+    //after the vaidation of the email
+    if (everythingAlright == true) {
+        let formObject = {};
+        let email = document.getElementById('newsletter_emailaddress').value;
+        formObject.newsletter_email = email;
+        submit_email('POST', formObject)
     }
 })
 </script>
 
 <?php
-    include('widgets/footer.php');
+include('widgets/footer.php');
 ?>

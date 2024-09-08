@@ -1,58 +1,70 @@
 <?php
-    include('widgets/header.php');
+include('widgets/header.php');
 ?>
 
 <?php
-$firstName = $_POST['firstname'];
-$lastName = $_POST['lastname'];
-$emailAddress = $_POST['emailaddress'];
-$phoneNumber = $_POST['phonenumber'];
-$note = $_POST['note'];
+// Include the database connection file
+include('db_connection.php');
 
-//DB Connection
-$connection = new mysqli('localhost','root','','websteers');
-if($connection->connect_error){
-    die('Connection Failed : '.$connection->connect_error);
-} else {
-    $statement = $connection->prepare("insert into contact_submissions(firstName, lastName, emailAddress, phoneNumber, note) values(?,?,?,?,?)");
-    $statement->bind_param("sssis", $firstName, $lastName, $emailAddress, $phoneNumber, $note);
-    $statement->execute();
 ?>
+<main class="form-handle">
+    <?php
+    if (isset($db_error)) {
+        // Handle the error from the database connection
+        display_error_message($db_error);
+    } else {
+        try {
+            $firstName = $_POST['firstname'];
+            $lastName = $_POST['lastname'];
+            $emailAddress = $_POST['emailaddress'];
+            $phoneNumber = $_POST['phonenumber'];
+            $note = $_POST['any_note'];
 
-<main>
-    <section class="thank-you">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5">
-                    <div class="thank-you-text">
-                        <p>Thank You!</p>
-                        <p>Data Submitted successfully</p>
-                    </div>
-                    <div class="thank-you-next">
-                        <p>What would you do next?</p>
-                        <a href="./index.php">
-                            <button class="button-custom first">Go Back Home</button>
-                        </a>
-                        <a href="./services-websteers.php">
-                            <button class="button-custom text-white">Explore More</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <div class="thank-you-image"></div>
-                </div>
-            </div>
-        </div>
+            // to handle empty note
+            if ($note == "") {
+                $note = "NA";
+            }
+
+            $statement = $connection->prepare("INSERT INTO contact_submissions(firstName, lastName, emailAddress, phoneNumber, note) VALUES(?,?,?,?,?)");
+
+            // Check if the statement was prepared successfully
+            if (!$statement) {
+                // Check if the error is related to a missing table
+                if (strpos($connection->error, 'doesn\'t exist') !== false) {
+                    // Throw a specific exception if the table is missing
+                    throw new Exception('The table does not exist in the database. Please check the database schema.');
+                }
+            }
+            // Bind the email parameter to the SQL query
+            elseif (!$statement->bind_param("sssis", $firstName, $lastName, $emailAddress, $phoneNumber, $note)) {
+                //Error occured during the binding of parameters
+                throw new Exception("Parameter binding failed: " . $statement->error);
+            }
+            // Execute the query and check if it was successful 
+            elseif ($statement->execute()) {
+                display_thanks_message();
+            } else {
+                //throw the error for any unexpected error
+                throw new Exception("An Unexpected Error Occured. Please try again: " . $statement->error);
+            }
+
+            //Closing the statement
+            $statement->close();
+
+            // Close the database connection if it was successful
+            if (isset($connection)) {
+                $connection->close();
+            }
+        } catch (Exception $e) {
+            //To show errors that occured
+            display_error_message('Error: ' . $e->getMessage());
+        }
+    }
+    ?>
+    <section class="background-shape-overlay">
     </section>
 </main>
 
 <?php
-    echo "Data submitted successfully";
-    $statement->close();
-    $connection->close();
-}
-?>
-
-<?php
-    include('widgets/footer.php');
+include('widgets/footer.php');
 ?>

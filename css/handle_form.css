@@ -1,12 +1,18 @@
+.form-handle {
+    position: relative;
+    z-index: 0;
+}
+
+/* for thany you elements css */
 .thank-you-image {
     width: 100%;
-    height: 400px;
+    height: var(--handle_form_height);
     background-image: url('../images/thank-you.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-.thank-you>.container>.row>.col-sm-5 {
+.thank-you>.container>.row>.col-sm-6:first-child {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -20,13 +26,19 @@
 }
 
 .thank-you-text p,
-.thank-you-next p {
-    font-size: 1.1rem;
-    font-weight: 500;
+.error-text p {
+    font-size: 0.9rem;
+    margin-bottom: 0px;
+}
+
+.thank-you-next p,
+.error-next p {
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .thank-you-next {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .thank-you-next p {
@@ -41,8 +53,45 @@
     padding: 8px 12px;
 }
 
+/* for error handling css */
+.error>.container>.row>.col-sm-6:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.error .button-custom {
+    padding: 8px 12px;
+}
+
+.error-text h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.error-next {
+    margin-top: 30px;
+}
+
+.error-next a {
+    text-decoration: none;
+}
+
+.error-image {
+    width: 100%;
+    height: var(--handle_form_height);
+    background-image: url('../icons/warning.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 992px) {
     .thank-you>.container {
+        max-width: 100%;
+    }
+
+    .error>.container {
         max-width: 100%;
     }
 }
@@ -52,25 +101,34 @@
         font-size: 2rem;
     }
 
-    .thank-you-text p,
-    .thank-you-next p,
     .button-custom {
         font-size: 0.8rem;
     }
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 600px) {
 
-    .thank-you>.container>.row>.col-sm-5,
-    .thank-you>.container>.row>.col-sm-7 {
+    .thank-you>.container>.row>.col-sm-6,
+    .error>.container>.row>.col-sm-6 {
         width: 100%;
     }
 
-    .thank-you>.container>.row>.col-sm-5 {
+    .thank-you>.container>.row>.col-sm-6:first-child,
+    .error>.container>.row>.col-sm-6:first-child {
         margin: 30px 0px 0px 0px;
     }
+}
 
-    .thank-you-next {
-        margin-top: 20px;
-    }
+/* for Background shape */
+.background-shape-overlay {
+    position: absolute;
+    z-index: -1;
+    bottom: -5px;
+    right: 0px;
+    width: 350px;
+    height: 270px;
+    background-image: url('../images/carousel_slide_1_shape.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotateX(180deg);
 }
