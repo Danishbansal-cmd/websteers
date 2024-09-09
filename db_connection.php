@@ -1,4 +1,10 @@
 <?php
+// Include the configuration file
+$config = require __DIR__ . '/config.php'; 
+
+// Access database configuration
+$db_config = $config['database_details'];
+
 //These 3 lines are used for the debugging and development purposes
 //are used to display the error values
 ini_set('display_errors', 1);
@@ -10,16 +16,13 @@ error_reporting(E_ALL);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    $host = "sql112.infinityfree.com";
-    $username = "if0_37256691";
-    $password = "KRw5i0GNKsJmIDs";
-    $database = "if0_37256691_websteers";
-
-    // for localhost purposes only
-    // $connection = new mysqli('localhost','root','','websteers');
+    // for localhost purposes only 
+    // which should have the database with name 'websteers'
+    // otherwise create it for localhost purposes
+    // $connection = new mysqli('localhost', 'root', '', 'websteers');
 
     // for Real DB Connection
-    $connection = new mysqli($host, $username, $password, $database);
+    $connection = new mysqli($db_config['host'], $db_config['username'], $db_config['password'], $db_config['database']);
     
     if (!($connection instanceof mysqli)) {
         // Throw an exception with the error message

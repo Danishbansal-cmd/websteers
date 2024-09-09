@@ -519,7 +519,7 @@ include('widgets/header.php');
             <div class="container contact-form-main-content">
                 <div class="row">
                     <div class="col-sm-6">
-                        <form action="form-handle.php" method="post">
+                        <form id="contact_index_page_form" action="form-handle.php" method="post">
                             <!--  onsubmit="return false" -->
                             <div class="form-main-content-heading">
                                 <h4>Contact Us</h4>
@@ -681,32 +681,34 @@ $(window).resize(function() {
 // Handle form submission using AJAX
 async function submit_email(method, formData) {
     try {
-        const response = await fetch('./newsletter-emails.php', {
+        fetch('./newsletter-emails.php', {
             'method': method,
             'headers': {
                 'Content-Type': 'application/json'
             },
             'body': JSON.stringify(formData) // Send email data
+        }).then((response) => {
+
+            // Check if the response is OK (status 200)
+            if (!response.ok) {
+                throw new Error('Network response was not ok (Newsletter)');
+            } else {
+                console.log("Network response is ok (Newsletter)")
+            }
+            return response.text();
+        }).then((data) => {
+
+            // Check the response status
+            if (data.status === 200) {
+                console.log("Successful: Request generated (Newsletter)")
+            } else {
+                console.log("UnSuccessful: Request not generated (Newsletter)")
+            }
+            console.log(typeof data)
+            //because the type of data is string 
+            //so we need to parse it into the JSON
+            alert((JSON.parse(data))['message']);
         });
-
-        const data = await response;
-
-        // Check if the response is OK (status 200)
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        } else {
-            console.log("Network response is ok")
-        }
-
-        // Check the response status
-        if (data.status === 200) {
-            console.log("Successful: Request generated")
-        } else {
-            console.log("UnSuccessful: Request not generated")
-        }
-
-        alert(data.message);
-
     } catch (error) {
         // Check the error type using the 'name' property
         switch (error.name) {
@@ -723,18 +725,19 @@ async function submit_email(method, formData) {
 }
 
 // for newsletter button on_click functions
-$("#newsletter_form").submit(async function(event) {
+$("#newsletter_form").submit(function(event) {
+    event.preventDefault();
     let everythingAlright = true;
 
-    let newsletter_email = $('#newsletter_emailaddress').val();
+    let newsletter_email_address = $('#newsletter_emailaddress').val();
     let validRegexForEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    if (newsletter_email == "") {
+    if (newsletter_email_address == "") {
         everythingAlright = false;
         $('.newsletter-email-error').css({
             "bottom": "-27px"
         });
         $('.newsletter-email-error').html("Empty Email!!!");
-    } else if (!(validRegexForEmail.test(newsletter_email))) {
+    } else if (!(validRegexForEmail.test(newsletter_email_address))) {
         everythingAlright = false;
         $('.newsletter-email-error').css({
             "bottom": "-27px"
@@ -750,8 +753,8 @@ $("#newsletter_form").submit(async function(event) {
     //after the vaidation of the email
     if (everythingAlright == true) {
         let formObject = {};
-        let email = document.getElementById('newsletter_emailaddress').value;
-        formObject.newsletter_email = email;
+        // newsletter_email will be used to address the field in PHP
+        formObject.newsletter_email = newsletter_email_address;
         submit_email('POST', formObject)
     }
 })

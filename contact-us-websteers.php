@@ -17,7 +17,7 @@
             <div class="container contact-form-main-content">
                 <div class="row">
                     <div class="col-sm-8">
-                        <form action="form-handle.php" method="post">
+                        <form id="contact_page_form" action="form-handle.php" method="post">
                             <!--  onsubmit="return false" -->
                             <div class="form-main-content-heading">
                                 <h4>Contact Us</h4>

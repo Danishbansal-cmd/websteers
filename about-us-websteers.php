@@ -186,12 +186,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="discount-email-main">
-                        <input type="email" name="useremail" id="discount_emailaddress" class="input-field-small"
-                            placeholder="Enter Your Email">
-                        <button class="button-custom text-white" id="subscribe_button">Subscribe</button>
-                        <div class="discount-email-error text-white"></div>
-                    </div>
+                    <form id="discount_form">
+                        <div class="discount-email-main">
+                            <input type="email" name="useremail" id="discount_emailaddress" class="input-field-small"
+                                placeholder="Enter Your Email">
+                            <button type="submit" class="button-custom text-white"
+                                id="discount_subscribe_button">Subscribe</button>
+                            <div class="discount-email-error text-white"></div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -200,23 +203,84 @@
 
 <script>
 $(document).ready(function() {
-    $("#subscribe_button").click(function() {
-        let discount_email = $('input[name=useremail]').val();
+    // for handling the discount_subscribed emails
+    // Handle form submission using AJAX
+    async function submit_email(method, formData) {
+        try {
+            fetch('./discount-emails.php', {
+                'method': method,
+                'headers': {
+                    'Content-Type': 'application/json'
+                },
+                'body': JSON.stringify(formData) // Send email data
+            }).then((response) => {
+                // Check if the response is OK (status 200)
+                if (!response.ok) {
+                    throw new Error('Network response was not ok (Discount)');
+                } else {
+                    console.log("Network response is ok (Discount)")
+                }
+                return response.text();
+            }).then((data) => {
+                // Check the response status
+                if (data.status === 200) {
+                    console.log("Successful: Request generated (Discount)")
+                } else {
+                    console.log("UnSuccessful: Request not generated (Discount)")
+                }
+                console.log(typeof data)
+                //because the type of data is string 
+                //so we need to parse it into the JSON
+                alert((JSON.parse(data))['message']);
+            });
+        } catch (error) {
+            // Check the error type using the 'name' property
+            switch (error.name) {
+                case 'SyntaxError':
+                    alert(error);
+                    console.error('Caught an unknown error:', error.message);
+                    break;
+                default:
+                    alert(error);
+                    console.error('Caught an unknown error:', error.message);
+                    break;
+            }
+        }
+    }
+
+    // for newsletter button on_click functions
+    $("#discount_form").submit(function(event) {
+        event.preventDefault();
+        let everythingAlright = true;
+
+        let discount_email_address = $('#discount_emailaddress').val();
         let validRegexForEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-        if (discount_email == "") {
+        if (discount_email_address == "") {
+            everythingAlright = false;
             $('.discount-email-error').css({
                 "bottom": "-27px"
             });
             $('.discount-email-error').html("Empty Email!!!");
-        } else if (!(validRegexForEmail.test(discount_email))) {
+        } else if (!(validRegexForEmail.test(discount_email_address))) {
+            everythingAlright = false;
             $('.discount-email-error').css({
                 "bottom": "-27px"
             });
             $('.discount-email-error').html("Format Wrong Email!!!")
         } else {
+            everythingAlright = true;
             $('.discount-email-error').css({
                 "bottom": "0px"
             });
+        }
+
+
+        //after the vaidation of the email
+        if (everythingAlright == true) {
+            let formObject = {};
+            // discount_email will be used to address the field in PHP
+            formObject.discount_email = discount_email_address;
+            submit_email('POST', formObject)
         }
     })
 });

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let formButtonClicked = false;
-    $('form').submit(function (event) {
+    $('#contact_index_page_form, #contact_page_form').submit(function (event) {
         let everythingAlright = true;
         formButtonClicked = true;
         event.preventDefault();
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 $('#phoneNumber p').html("Must have 10 Digits Only")
             }
         }
-        
+
         if (everythingAlright == true) {
             event.currentTarget.submit();
         }
@@ -87,7 +87,6 @@ $(document).ready(function () {
                 //for FirstName and LastName
                 //
                 if (currentElement == "firstname" && currentElementValue == "") {
-                    console.log("work1")
                     $('#fullName.collapse').collapse('show');
                     $('#name-row.form-main-content-inner-row').css({
                         "background-color": "#ff00001c"
