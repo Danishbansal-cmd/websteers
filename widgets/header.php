@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="images/logo/favicon.png">
     <meta name="description" content="Website creator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -49,10 +50,6 @@
 
     <!-- for font-awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- for flaticon -->
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
     <!-- for font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
