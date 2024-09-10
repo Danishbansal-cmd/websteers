@@ -32,6 +32,7 @@
 /* For Slide First */
 .carousel-item.first {
     background-color: antiquewhite;
+    z-index: 0;
 }
 
 .carousel-slide-first {

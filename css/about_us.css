@@ -319,8 +319,7 @@
 .discount-email-main .button-custom {
     background-color: black;
     padding: 10px 35px;
-    border: none;
-    text-decoration: none;
+    border-radius: 0px !important;
 }
 
 .discount-text-main h2 {

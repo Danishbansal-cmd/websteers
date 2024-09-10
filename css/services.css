@@ -213,14 +213,6 @@
     text-transform: uppercase;
 }
 
-.button-custom {
-    background-color: var(--global_color_main_first);
-    border-radius: 4px;
-    padding: 15px 35px;
-    border: none;
-    text-decoration: none;
-}
-
 .what-is-seo>.container>.row>.col-sm-5 {
     display: flex;
     align-items: center;

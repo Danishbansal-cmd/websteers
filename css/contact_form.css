@@ -37,6 +37,7 @@
 .input-field-small {
     width: 100%;
     border: none;
+    border-radius: 0px !important;
     height: 50px;
     margin: 0;
     padding: 0px 0px 0px 15px;
