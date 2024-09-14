@@ -85,7 +85,8 @@
     <div class="container footer-copyright">
         <div class="row">
             <div class="col-sm-8">
-                <p class="copyright-text">© <span></span> Websteers. Digital Agency (Brampton, Canada). All Rights Reserved
+                <p class="copyright-text">© <span></span> Websteers. Digital Agency (Brampton, Canada). All Rights
+                    Reserved
                 </p>
             </div>
             <div class="col-sm-4">
@@ -97,6 +98,18 @@
         </div>
     </div>
 </footer>
+<section class="designed-by">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div></div>
+            </div>
+            <div class="col-sm-6">
+                <div>Designed & Created By: Danish Bansal</div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>
 $(document).ready(function() {
     const d = new Date();
@@ -105,4 +118,5 @@ $(document).ready(function() {
 });
 </script>
 </body>
+
 </html>

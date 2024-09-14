@@ -261,3 +261,15 @@
         bottom: 0px;
     }
 }
+
+.designed-by {
+    padding: 2px 0px;
+    background-color: red;
+    color: white;
+}
+
+.designed-by > .container > .row > .col-sm-6:last-child {
+    display: flex;
+    justify-content: end;
+    font-size: 0.8rem;
+}
