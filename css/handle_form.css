@@ -81,7 +81,7 @@
 .error-image {
     width: 100%;
     height: var(--handle_form_height);
-    background-image: url('../icons/warning.png');
+    background-image: url('../images/icons/warning.png');
     background-size: contain;
     background-repeat: no-repeat;
 }

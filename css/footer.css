@@ -157,9 +157,10 @@
     border-radius: 50px;
     left: -42px;
     position: absolute;
-    background-image: url(../icons/link.png);
+    background-position: center;
+    background-image: url(../images/icons/link.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     height: 30px;
     top: 1px;
     background-color: white;

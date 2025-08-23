@@ -180,7 +180,7 @@
                 <div class="col-sm-8">
                     <div class="ads-marketing-content">
                         <div class="ads-marketing-content-heading">
-                            <img src="icons/megaphone.png" alt="megaphone">
+                            <img src="images/icons/megaphone.png" alt="megaphone">
                             <div>
                                 <h5>Marketing Agency</h5>
                                 <p>Let's Reach the world</p>

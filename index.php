@@ -292,7 +292,7 @@ include('widgets/header.php');
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="make-different-main">
-                            <img src="icons/paint.png" alt="paint">
+                            <img src='../images/icons/paint.png' alt="paint" />
                             <h4>Branding</h4>
                             <p>
                                 At Websteers, we offer a complete suite of branding services, including custom logo
@@ -305,7 +305,7 @@ include('widgets/header.php');
                     </div>
                     <div class="col-sm-4">
                         <div class="make-different-main">
-                            <img src="icons/printer.png" alt="printer">
+                            <img src="../images/icons/printer.png" alt="printer">
                             <h4>Print</h4>
                             <p>
                                 Websteers provides expertly crafted print materials, including flyers, leaflets,
@@ -317,7 +317,7 @@ include('widgets/header.php');
                     </div>
                     <div class="col-sm-4">
                         <div class="make-different-main">
-                            <img src="icons/code.png" alt="code">
+                            <img src="../images/icons/code.png" alt="code">
                             <h4>Digital</h4>
                             <p>
                                 At Websteers, we specialize in creating responsive websites, whether it's a static HTML
@@ -361,7 +361,7 @@ include('widgets/header.php');
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="testimonials-main">
-                            <div class="testimonials-person" style="background-image: url(icons/person_3.png)"></div>
+                            <div class="testimonials-person" style="background-image: url(images/icons/person_3.png)"></div>
                             <p>
                                 The content writing team at Websteers nailed it! They delivered meaningful, keyword-rich
                                 content that perfectly aligns with our brand voice. We've seen a noticeable improvement
@@ -372,7 +372,7 @@ include('widgets/header.php');
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="testimonials-main">
-                            <div class="testimonials-person" style="background-image: url(icons/person_2.png)"></div>
+                            <div class="testimonials-person" style="background-image: url(images/icons/person_2.png)"></div>
                             <p>
                                 Websteers designed a fantastic website for us! The design is visually stunning, with
                                 easy navigation and thoughtful font selection that enhances the user experience. Our
@@ -383,7 +383,7 @@ include('widgets/header.php');
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="testimonials-main">
-                            <div class="testimonials-person" style="background-image: url(icons/person_5.png)"></div>
+                            <div class="testimonials-person" style="background-image: url(images/icons/person_5.png)"></div>
                             <p>
                                 Websteers handled our web development and page management with precision. The site
                                 functions seamlessly, and every page is optimized for performance. Their technical
@@ -394,7 +394,7 @@ include('widgets/header.php');
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="testimonials-main">
-                            <div class="testimonials-person" style="background-image: url(icons/person_4.png)"></div>
+                            <div class="testimonials-person" style="background-image: url(images/icons/person_4.png)"></div>
                             <p>
                                 Best response ever! The Websteers team is always available when we need them. Their
                                 quick support and dedication made the entire process smooth and stress-free. Plus, the
